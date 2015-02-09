@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+   <title>Christmas Tree 2014</title>
+</head>
+
+<body>
+   <h1><font color="green"><b>Merry</b></font> <font color="red"><b>Christmas</b></font>  </h1>
+   <br>
+   {% for pin in pins %}
+   <p>The {{ pins[pin].name }}
+   {% if pins[pin].state == true %}
+      are currently <font color="green"><b>on</b></font>. <br> 
+</t></t>
+<FORM>
+<INPUT TYPE="button" VALUE="Turn Lights Off" style="font-weight:bold; color:red;" onClick="parent.location='/{{pin}}/off'">
+</FORM>
+   {% else %}
+      are currently <font color="red"><b>off</b></font>. <br>
+<FORM>
+<INPUT TYPE="button" VALUE="Turn Lights On" style="font-weight:bold; color:green;" onClick="parent.location='/{{pin}}/on'">
+</FORM>
+   {% endif %}
+   </p>
+{% endfor %}
+<br>
+   {% if message %}
+   <h2>{{ message }}</h2>
+   {% endif %}
+
+</body>
+</html>
